@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #121212;
+  color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: #1e1e1e;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  width: 320px;
+  text-align: center;
+  position: relative; /* Required for positioning toggle inside */
+}
+
+h1 {
+  margin-bottom: 25px;
+  color: #00bcd4;
+}
+
+.input-group {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #ccc;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #2c2c2c;
+  color: #fff;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #00bcd4;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0097a7;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffea00;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#result.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Toggle Switch Styling */
+.toggle {
+  position: absolute;
+  top: 16px;
+  background-color: transparent; 
+  right: 56px;
+  
+}
+
+#icon-on {
+  width: 100px;
+  height: 80px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  background-color: transparent;
+  
+}
+
+#icon-on:active {
+  transform: scale(0.95);
+}
+
+body.light-theme {
+  background-color: #f5f5f5;
+  color: #121212;
+}
+
+body.light-theme .container {
+  background-color: #ffffff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+body.light-theme label {
+  color: #333;
+}
+
+body.light-theme input {
+  background-color: #f0f0f0;
+  color: #000;
+  border: 1px solid #ccc;
+}
+
+body.light-theme button {
+  background-color: #00bcd4;
+  color: #fff;
+}
+
+body.light-theme #result {
+  color: #00796b;
+}
