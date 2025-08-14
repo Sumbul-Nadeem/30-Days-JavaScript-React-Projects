@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+form {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 40px 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.fa-paper-plane {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    color: seagreen;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 22px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+    position: relative;
+}
+
+.input-group label {
+    color: white;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.input-group input,
+.input-group textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-size: 16px;
+    border: 1px solid transparent;
+    transition: border 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border: 1px solid #fff;
+}
+
+::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.input-group span {
+    font-size: 12px;
+    color: #ff6b6b;
+    position: absolute;
+    bottom: -18px;
+    right: 5px;
+    transition: 0.3s;
+}
+
+.input-group span i {
+    color: #00ff99;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: white;
+    color: seagreen;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+#submit-error {
+    color: #ff6b6b;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
