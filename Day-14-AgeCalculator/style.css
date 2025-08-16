@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #0d1117;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.container {
+    width: 560px;
+    max-width: 95%;   
+    height: auto;     
+    padding: 25px;
+    border-radius: 12px;
+    background: #161b22;
+    border: 1px solid #0ef;
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.4);
+    text-align: center;
+}
+
+.base h4 {
+    font-size: 36px;
+    color: #0ef;
+    margin-bottom: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Inputs row */
+.input-row {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.block {
+    flex: 1;
+    text-align: center;
+}
+
+.title {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 10px;
+    height: 65%;
+    border: 1px solid #0ef;
+    background: #0d1117;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 0 8px rgba(0, 238, 255, 0.3);
+}
+
+input[type=text]:focus {
+    box-shadow: 0 0 12px rgba(0, 238, 255, 0.7);
+    border-color: #0ef;
+}
+
+input[type=button] {
+    width: 100%;
+    margin-top: 40px;
+    padding: 12px;
+    font-size: 20px;
+    cursor: pointer;
+    background: #0ef;
+    color: #111;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    transition: 0.3s;
+    box-shadow: 0 0 12px rgba(0, 238, 255, 0.6);
+}
+
+input[type=button]:hover {
+    background: #05cfd6;
+    color: #fff;
+    box-shadow: 0 0 18px rgba(0, 238, 255, 0.9);
+}
+
+#age {
+    margin-top: 18px;
+    font-size: 16px;
+    color: #fff;
+}
+
+#age.error {
+    color: #ff4d4d;
+    font-weight: 500;
+}
+
+@media (max-width: 650px) {
+    .container {
+        width: 95%;      
+        padding: 15px;
+    }
+
+    .base h4 {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .input-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .block {
+        width: 100%;
+        text-align: left;
+    }
+
+    .title {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    input[type=text] {
+        font-size: 14px;
+        padding: 8px;
+        height: auto;
+    }
+
+    input[type=button] {
+        margin-top: 15px;
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    #age {
+        font-size: 14px;
+    }
+}
