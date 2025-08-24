@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+/* Container */
+.counter-container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 40px 30px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 320px;
+  transition: transform 0.3s ease;
+}
+
+.counter-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Title */
+.counter-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 25px;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Display */
+.counter-display {
+  margin: 25px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.counter-number {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  padding: 25px;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.counter-number:active {
+  transform: scale(1.2);
+}
+
+/* Buttons */
+.counter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.btn {
+  border: none;
+  padding: 14px 22px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 80px;
+}
+
+/* Button colors */
+.increment {
+  background: #28a745;
+  color: #fff;
+}
+
+.decrement {
+  background: #dc3545;
+  color: #fff;
+}
+
+.reset {
+  background: #ff9800;
+  color: #fff;
+}
+
+/* Hover effect */
+.btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none; /* no hover animation */
+  box-shadow: none;
+}
+
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+.counter-number.pop {
+  animation: pop 0.3s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .counter-container {
+    width: 90%;
+    padding: 30px 20px;
+  }
+
+  .counter-number {
+    width: 100px;
+    height: 100px;
+    font-size: 2.5rem;
+  }
+
+  .btn {
+    padding: 12px 18px;
+    font-size: 1rem;
+  }
+}
