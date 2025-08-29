@@ -1,0 +1,148 @@
+/* Base reset & sizing */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+html, body { width: 100%; overflow-x: hidden; }
+
+/* Global */
+body { 
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #cbf5f1, #e4c570);
+  color: #000;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app { text-align: center; margin-bottom: 20px; }
+
+h1 {
+  margin-bottom: 30px;
+  margin-top: 85px;
+  font-size: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Input row */
+.note-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 35px;
+  flex-wrap: wrap;              /* prevents overflow */
+  justify-content: center;      /* keeps centered when wrapped */
+}
+
+.note-input input {
+  flex: 1 1 280px;              /* grow/shrink with a friendly base */
+  max-width: 520px;             /* nice max on large screens */
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #fff;
+  color: #000;
+  font-size: 16px;
+  height: 45px;
+}
+.note-input input::placeholder { color: #000; }
+
+.note-input button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #5697cc;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.note-input button:hover { background: #17657a; }
+
+/* Notes Grid */
+.notes-board {
+  display: grid;
+  width: 100%;
+  max-width: 1000px;
+  gap: 20px;
+
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  justify-items: stretch;
+}
+
+/* Note Card */
+.note-card {
+  background: #ede9fe;
+  padding: 15px;
+  border-radius: 12px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+  width: 100%;            
+}
+.note-card:hover { transform: translateY(-4px); }
+
+.note-card p {
+  margin: 0;
+  font-size: 16px;
+  color: #000;
+  flex-grow: 1;
+  word-break: break-word;
+}
+
+/* Actions */
+.note-actions {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.note-actions button {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.edit-btn { background: #14b8a6; color: #fff; }
+.edit-btn:hover { background: #0e8e83; }
+.delete-btn { background: #f43f5e; color: #fff; }
+.delete-btn:hover { background: #d32f2f; }
+
+
+@media (max-width: 480px) {
+  body { padding: 10px; }
+  h1 { font-size: 26px; margin-top: 40px; }
+
+  .notes-board {
+    grid-template-columns: 1fr;  
+    gap: 12px;
+  }
+
+  .note-card { padding: 12px; box-shadow: 0 3px 8px rgba(0,0,0,0.25); }
+  .note-actions button { padding: 8px 14px; font-size: 13px; }
+}
+
+/* Small tablets: prefer 2 columns */
+@media (min-width: 481px) and (max-width: 768px) {
+  h1 { font-size: 30px; margin-top: 60px; }
+
+  .note-input { flex-direction: column; align-items: stretch; }
+  .note-input input, .note-input button { width: 100%; }
+
+  .notes-board { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Medium tablets: 2–3 columns depending on width */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .notes-board { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+}
